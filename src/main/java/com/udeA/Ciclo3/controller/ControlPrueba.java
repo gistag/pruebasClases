@@ -25,4 +25,15 @@ public class ControlPrueba {
 
         return "verEmpresas2";//llamamos al HTML
     }
+
+    @GetMapping({"/AgregarEmpresa"})
+        public String nuevaEmpresa(Model model){
+            Empresa emp = new Empresa();
+            model.addAttribute("emp", emp);
+            return "agregarEmpresa";
+        }
+
+
+
+
 }
