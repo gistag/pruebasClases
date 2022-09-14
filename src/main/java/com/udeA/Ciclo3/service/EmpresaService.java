@@ -36,12 +36,11 @@ public class EmpresaService {
     }
 //método delete pendiente
     public boolean deleteEmpresa(Integer id){
-        empresaRepository.deleteById(id);
-        if(getEmpresaById(id)!=null){
-            return false;
+        empresaRepository.deleteById(id); //Eliminar Empresa
+        if(empresaRepository.findById(id)!=null){
+            return true;
         }
-        return true;
-
+        else {return false;}
     }
 }
 
